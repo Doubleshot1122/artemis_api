@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const questionsController = require('../controllers/questions_Controller.js')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json({"name":"Donny", "name2":"Summer", "name3":"Joshua"});
-});
+
+//get ALL user data
+router.get('/', questionsController.getQuestionsAll);
+router.get('/:id', questionsController.getOneQuestion)
 
 module.exports = router;
+ 

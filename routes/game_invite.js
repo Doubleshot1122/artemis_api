@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const gameInviteController = require('../controllers/game_invite_Controller.js')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json({"name":"Donny", "name2":"Summer", "name3":"Joshua"});
-});
+
+//get ALL user data
+router.get('/', gameInviteController.getAll);
+router.get('/:id', gameInviteController.getOneGame)
 
 module.exports = router;
+ 

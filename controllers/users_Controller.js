@@ -20,3 +20,4 @@ function getOneUser(req, res, next) {
 }
 
 module.exports = {getUsersAll, getOneUser}
+ 

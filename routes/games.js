@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const gamesController = require('../controllers/games_Controller.js')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json({"name":"Donny", "name2":"Summer", "name3":"Joshua"});
-});
+
+//get ALL user data
+router.get('/', gamesController.getGamesAll);
+router.get('/:id', gamesController.getOneGame)
 
 module.exports = router;
