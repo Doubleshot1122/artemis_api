@@ -9,7 +9,11 @@ function postNewUser(req, res, next) {
     user_name: req.body.user_name || 'required field'
   }
 
-  if(user.display_name = 'required field' || user.email = 'required field' || user.icon = 'required field' || user.password = 'required field' || user.user_name){
+  if(user.display_name === 'required field'
+    || user.email === 'required field'
+    || user.icon === 'required field'
+    || user.password === 'required field'
+    || user.user_name === 'required field'){
     console.log("======inside & error=====");
     user.error = "data is missing"
     res.json({user})
