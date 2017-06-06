@@ -8,7 +8,7 @@ function postNewUser(req, res, next) {
     password: req.body.password || 'required field',
     user_name: req.body.user_name || 'required field'
   }
-  
+
   if(user.display_name === 'required field'
     || user.email === 'required field'
     || user.icon === 'required field'
@@ -29,4 +29,4 @@ function postNewUser(req, res, next) {
 }
 
 
-module.exports = {postNewUser}
+module.exports = {postNewUser} 

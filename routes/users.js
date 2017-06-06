@@ -3,11 +3,10 @@ const router = express.Router();
 const dbGet = require('../controllers/all_queries.js');
 const dbUpdate = require('../controllers/users_Controller.js');
 
-
-
-//get ALL user data
+//POST create new user
 router.post('/', dbUpdate.postNewUser);
 
+//GET user data by search
 router.get('/', dbGet.getData);
 
 

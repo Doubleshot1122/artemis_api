@@ -4,6 +4,6 @@ const dbGet = require('../controllers/all_queries.js');
 
 
 //get ALL user data
-router.get('/', dbGet.getData);
+router.get('/', dbGet.getData); 
 
 module.exports = router;
