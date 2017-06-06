@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../controllers/all_queries.js')
+const dbGet = require('../controllers/all_queries.js');
+const dbUpdate = require('../controllers/users_Controller.js');
+
 
 
 //get ALL user data
-router.get('/', db.getData);
+router.get('/', dbGet.getData);
+
+router.post('/', dbUpdate.postNewUser)
 
 module.exports = router;

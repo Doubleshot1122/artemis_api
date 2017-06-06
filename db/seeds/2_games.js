@@ -3,7 +3,6 @@ exports.seed = function(knex) {
     .then(() => {
       return knex('games').insert([
         {
-            id: 1,
             name: 'Mission Seattle',
             description: 'As spys your mission will be to find various clues throughout the city and then rally at the final destination',
             status: 'scheduled',
@@ -12,7 +11,6 @@ exports.seed = function(knex) {
             start_loc_long: -122.333802
         },
         {
-            id: 2,
             name: 'I salute you',
             description: 'Explore the historic locations of Seattle',
             status: 'started',
@@ -21,7 +19,6 @@ exports.seed = function(knex) {
             start_loc_long: -122.333224
         },
         {
-            id: 3,
             name: 'Test Game',
             description: 'I really hope that this works',
             status: 'complete',

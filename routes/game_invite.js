@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../controllers/all_queries.js')
+const dbGet = require('../controllers/all_queries.js');
 
 
 //get ALL user data
-router.get('/', db.getData);
+router.get('/', dbGet.getData);
 
 module.exports = router;

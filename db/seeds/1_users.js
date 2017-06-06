@@ -3,14 +3,12 @@ exports.seed = function(knex) {
     .then(() => {
       return knex('users').insert([
         {
-            id: 1,
             user_name: 'alphaFox1',
             display_name: 'Donny',
             email: 'skibo415@yahoo.com',
             password: 'test123',
             icon: 1
         }, {
-            id: 2,
             user_name: 'evil_lyns1',
             display_name: 'Summer',
             email: 'evil_lyns@yahoo.com',
@@ -18,7 +16,6 @@ exports.seed = function(knex) {
             icon: 2
         },
         {
-            id: 3,
             user_name: 'goredwings',
             display_name: 'Joshua',
             email: 'joshuawarren000@gmail.com',
@@ -26,12 +23,19 @@ exports.seed = function(knex) {
             icon: 3
         },
         {
-            id: 4,
             user_name: 'dasteacher',
             display_name: 'Wes',
             email: 'test@test.com',
             password: 'test123',
             icon: 4
-        }]);
+        },
+        {
+            user_name: 'redrum',
+            display_name: 'Derek',
+            email: 'resident@msn.com',
+            password: 'test123',
+            icon: 1
+        }
+      ]);
     })
 };

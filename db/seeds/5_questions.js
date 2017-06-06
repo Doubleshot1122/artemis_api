@@ -3,7 +3,6 @@ exports.seed = function(knex) {
     .then(() => {
       return knex('questions').insert([
         {
-            id: 1,
             loc_lat: 47.598951,
             loc_long: -122.333802,
             loc_radius: 10,
@@ -14,7 +13,6 @@ exports.seed = function(knex) {
             question_order: 1
         },
         {
-            id: 2,
             loc_lat: 47.600114,
             loc_long: -122.333176,
             loc_radius: 10,
@@ -25,7 +23,6 @@ exports.seed = function(knex) {
             question_order: 2
         },
         {
-            id: 3,
             loc_lat: 47.620506,
             loc_long: -122.349277,
             loc_radius: 20,
