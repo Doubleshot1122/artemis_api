@@ -9,23 +9,18 @@ function postNewUser(req, res, next) {
     user_name: req.body.user_name || 'required field'
   }
 
-  console.log("======HI========");
-  let reqArray = Object.values(user)
-
-  if(reqArray.includes('required field')){
+  if(user.display_name = 'required field' || user.email = 'required field' || user.icon = 'required field' || user.password = 'required field' || user.user_name){
+    console.log("======inside & error=====");
     user.error = "data is missing"
-    console.log("missing field", user);
     res.json({user})
   } else {
+    console.log("======inside & success=====");
     db('users').insert(user, '*')
     .then(newUser => {
       console.log("success", newUser);
       res.json({newUser})
     })
   }
-
-  console.log("======BYE========");
-
 }
 
 
