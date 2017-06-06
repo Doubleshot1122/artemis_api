@@ -9,6 +9,7 @@ function postNewUser(req, res, next) {
     user_name: req.body.user_name || 'required field'
   }
 
+  console.log(user);
   if(user.display_name === 'required field'
     || user.email === 'required field'
     || user.icon === 'required field'
