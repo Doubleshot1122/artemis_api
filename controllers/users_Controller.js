@@ -9,7 +9,9 @@ function postNewUser(req, res, next) {
     user_name: req.body.user_name || 'required field'
   }
 
-  if(Object.values(user).includes('required field')){
+  let reqArray = Object.values(user)
+
+  if(reqArray.includes('required field')){
     user.error = "data is missing"
     res.json({user})
   } else {
