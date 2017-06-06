@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const gameUserController = require('../controllers/game_user_Controller.js')
+const db = require('../controllers/all_queries.js')
 
 
 //get ALL user data
-router.get('/', gameUserController.getAll);
-router.get('/:id', gameUserController.getOneGame)
+router.get('/', db.getData);
 
 module.exports = router;
- 

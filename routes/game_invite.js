@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const gameInviteController = require('../controllers/game_invite_Controller.js')
+const db = require('../controllers/all_queries.js')
 
 
 //get ALL user data
-router.get('/', gameInviteController.getAll);
-router.get('/:id', gameInviteController.getOneGame)
+router.get('/', db.getData);
 
 module.exports = router;
- 
