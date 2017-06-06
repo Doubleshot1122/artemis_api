@@ -10,18 +10,21 @@ function postNewUser(req, res, next) {
   }
 
   let reqArray = Object.values(user)
+  console.log("======HI========");
 
   if(reqArray.includes('required field')){
     user.error = "data is missing"
+    console.log("missing field", user);
     res.json({user})
   } else {
     db('users').insert(user, '*')
     .then(newUser => {
+      console.log("success", newUser);
       res.json({newUser})
     })
-
   }
 
+  console.log("======BYE========");
 
 }
 
