@@ -6,8 +6,9 @@ const dbUpdate = require('../controllers/users_Controller.js');
 
 
 //get ALL user data
+router.post('/', dbUpdate.postNewUser);
+
 router.get('/', dbGet.getData);
 
-router.post('/', dbUpdate.postNewUser)
 
 module.exports = router;
