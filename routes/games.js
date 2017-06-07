@@ -3,7 +3,7 @@ const router = express.Router();
 const dbGet = require('../controllers/all_queries.js')
 const dbUpdate = require('../controllers/games_Controller.js')
 
-//PUT update game_user
+//PUT update game
 router.put('/', dbUpdate.updateGame)
 
 //get ALL user data
