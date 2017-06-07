@@ -21,6 +21,9 @@ createdb artemis_api
 ### game_user
 - GET game_user
 - GET game_user/?user_id=1
+- POST game_invite/new/
+- PUT game_invite/question/
+- PUT game_invite/game/
 
 ### game_invite
 - GET game_invite

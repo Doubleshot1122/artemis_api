@@ -1,24 +1,67 @@
 const db = require('../db/connections.js');
 
-function updateGameUser(req, res, next) {
-  let questionData = {
+function updateGameUserGame(req, res, next) {
+  let user_id = req.body.user_id;
+  let game_user = {
+    game_id : req.body.game_id,
+    question_id : 1
+  };
+
+  db('game_user')
+  .update(game_user, '*')
+  .where({user_id})
+  .then(results => {
+    res.json(results)
+  })
+  .catch(err => {
+    res.json({message: "something went wrong"})
+  })
+
+}
+
+function updateGameUserQuestion(req, res, next) {
+  let game_user = {
     game_id : req.body.game_id,
     user_id : req.body.user_id,
     question_id : req.body.question_id
   };
-  let scenario = req.body.scenario;
 
-  newGame(questionData, scenario, res);
+  db('game_user')
+  .update({question_id: game_user.question_id}, '*')
+  .where({game_id: game_user.game_id, user_id: game_user.user_id})
+  .then(results => {
+    res.json(results)
+  })
+  .catch(err => {
+    res.json({message: 'something went wrong'})
+  })
 
 }
 
+function addGameUser(req, res, next) {
+  let game_user = {
+    game_id : req.body.game_id,
+    user_id : req.body.user_id,
+    question_id : 1
+  };
 
-function newGame(questionData, scenario, res) {
-  db('game_user').where('user_id', questionData.user_id)
-  .then(results =>{
-    console.log(results);
-    res.json(results);
+  db('game_user')
+  .where('user_id', game_user.user_id)
+  .then(result => {
+    if (result.length > 0) {
+      res.json({error: "user_id already exsists perform a PUT instead of a POST"})
+    }else {
+      db('game_user')
+      .insert(game_user, '*')
+      .then(results => {
+        res.json(results)
+      })
+    }
+  })
+  .catch(err => {
+    res.json({message: 'something went wrong'})
   })
 }
 
-module.exports = {updateGameUser}
+
+module.exports = {updateGameUserGame, updateGameUserQuestion, addGameUser}
