@@ -1,22 +1,24 @@
 const db = require('../db/connections.js');
 
-function getAll(req, res, next) {
-  db('game_user')
-  .then(game_user => {
-    console.log(game_user[0]);
-    res.json({game_user})
+function updateGameUser(req, res, next) {
+  let questionData = {
+    game_id : req.body.game_id,
+    user_id : req.body.user_id,
+    question_id : req.body.question_id
+  };
+  let scenario = req.body.scenario;
+
+  newGame(questionData, scenario, res);
+
+}
+
+
+function newGame(questionData, scenario, res) {
+  db('game_user').where('user_id', questionData.user_id)
+  .then(results =>{
+    console.log(results);
+    res.json(results);
   })
 }
 
-function getOneGame(req, res, next) {
-  let id = req.params.id;
-  console.log("ID", id);
-  db('game_user')
-  .where('game_id', `${id}`)
-  .then(game_user_by_game => {
-    console.log(game_user_by_game);
-    res.json({game_user_by_game})
-  })
-}
-
-module.exports = {getAll, getOneGame}
+module.exports = {updateGameUser}
