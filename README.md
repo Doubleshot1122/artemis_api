@@ -18,7 +18,7 @@ createdb artemis_api
 - GET questions
 - GET questions/?id=1
 
-### game_User
+### game_user
 - GET game_user
 - GET game_user/?user_id=1
 
