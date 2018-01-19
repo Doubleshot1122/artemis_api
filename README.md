@@ -3,7 +3,7 @@
 createdb artemis_api
 
 
-[https://artemis-api.herokuapp.com/](https://artemis-api.herokuapp.com/)
+[http://artemis-api.herokuapp.com/](http://artemis-api.herokuapp.com/)
 
 ### users
 - GET users
